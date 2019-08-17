@@ -43,9 +43,10 @@ const List<Map> creditList = <Map>[
     "profilePic": AssetImage('images/SI_20190222_231242.jpeg'),
     "title": "Saikat Kundu",
     "color": Colors.white,
-    "facebookURL": "https://www.google.com",
-    "linkedInURL": "https://www.linkedin.com/in/sayantak-karar-93870716b",
-    "twitterURL": "https://twitter.com/SayantakKarar",
-    "instagramURL": "https://www.instagram.com/sayantakkarar/",
+    "facebookURL": "https://www.facebook.com/saikat.kundu.16",
+    "linkedInURL": "https://www.linkedin.com/in/saikat-kundu-63973014a/",
+    "twitterURL": "https://twitter.com/",
+    "instagramURL":
+        "https://instagram.com/yet_another_storyteller?igshid=7w8m757fbsxo",
   },
 ];
