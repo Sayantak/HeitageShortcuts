@@ -55,21 +55,21 @@ const Map kGraphNodesMap = {
   'CME 6th Floor': 1,
   'CME 5th Floor': 2,
   'CME 4th Floor': 3,
-  'CME 3th Floor': 4,
-  'CME 2th Floor': 5,
+  'CME 3rd Floor': 4,
+  'CME 2nd Floor': 5,
   'CME Ground Floor': 6,
   'CB 6th Floor': 7,
   'CB 5th Floor': 8,
   'CB 4th Floor': 9,
-  'CB 3th Floor': 10,
-  'CB 2th Floor': 11,
+  'CB 3rd Floor': 10,
+  'CB 2nd Floor': 11,
   'CB Ground Floor': 12,
   'ICT 6th Floor': 13,
   'ICT 5th Floor': 14,
   'ICT 4th Floor': 15,
-  'ICT 3th Floor': 16,
+  'ICT 3rd Floor': 16,
   'ICT Ground Floor': 17,
-  'ICT 2th Floor': 18,
+  'ICT 2nd Floor': 18,
   'CME Basement': 19,
   'Library': 20,
   'ICT Basement': 21,
@@ -79,8 +79,6 @@ const Map kGraphNodesMap = {
   'CB 1st Floor': 25,
   'ICT 1st Floor': 26,
 };
-
-// TODO#2: Write backend path generating algorithm in a separate file in a .dart file in lib (outside any subfolder)
 
 const List<List<double>> kLift_distance = [
   [

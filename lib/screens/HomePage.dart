@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:heritage_shortcuts/components/DropDownField.dart';
 import 'package:heritage_shortcuts/constants.dart';
-import 'ResultScreen.dart';
 import 'package:heritage_shortcuts/components/InAppLogo.dart';
 import 'package:heritage_shortcuts/GraphLogic.dart';
 
@@ -11,10 +10,17 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String startPosition;
-  String endPosition;
-  TextEditingController controller = new TextEditingController();
-  String start, end;
+  TextEditingController textEditingControllerStart = TextEditingController();
+  TextEditingController textEditingControllerDestination =
+      TextEditingController();
+
+  @override
+  void dispose() {
+    textEditingControllerDestination.dispose();
+    textEditingControllerStart.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,9 +59,8 @@ class _HomePageState extends State<HomePage> {
                   labelText: 'Start',
                   items: kLocations,
                   strict: false,
+                  controller: textEditingControllerStart,
                   onValueChanged: (value) {
-                    startPosition = value;
-                    // TODO #Crossbutton, when it is pressed make startposition null
                     print(value);
                   },
                 ),
@@ -65,7 +70,7 @@ class _HomePageState extends State<HomePage> {
               height: 20.0,
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(4.0),
               child: DropDownField(
                 icon: Icon(
                   Icons.location_on,
@@ -76,9 +81,8 @@ class _HomePageState extends State<HomePage> {
                 labelText: 'Destination',
                 items: kLocations,
                 strict: false,
+                controller: textEditingControllerDestination,
                 onValueChanged: (value) {
-                  endPosition = value;
-                  // TODO #Crossbutton, when it is pressed make startposition null
                   print(value);
                 },
               ),
@@ -88,17 +92,17 @@ class _HomePageState extends State<HomePage> {
       ),
       //TODO#4: Add RadioButtons for stair/lift selection (My job)
       floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-          if (kGraphNodesMap['$startPosition'] <= 26 &&
-              kGraphNodesMap['$startPosition'] > 0)
-            print(kGraphNodesMap['$startPosition']);
-          if (kGraphNodesMap['$endPosition'] <= 26 &&
-              kGraphNodesMap['$endPosition'] > 0)
-            print(kGraphNodesMap['$endPosition']);
+        onPressed: () {
+//          print('${textEditingControllerStart.text}!');
+//          print('${textEditingControllerDestination.text}!');
 
-          ShortestPath ob =
-              await ShortestPath(startPosition, endPosition, true);
-          // print(ob.list_path);
+          String startPosition = textEditingControllerStart.text;
+          String destinationPosition = textEditingControllerDestination.text;
+
+          ShortestPath ob = ShortestPath();
+
+          List path = ob.givePathByLift(startPosition, destinationPosition);
+          print(path);
         },
         backgroundColor: Colors.blue[400],
         child: Icon(

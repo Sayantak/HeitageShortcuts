@@ -1,42 +1,47 @@
 import 'constants.dart';
 
 class ShortestPath {
-  String start, end;
-  int s, d;
-  bool lift;
-  Map graphNodesMap_inv;
-  var list_path = List(); //holds the path in terms of the keys of the map
+  Map graphNodesMapInverse;
+  List<int> listPath = List(); //holds the path in terms of the keys of the map
 
-  ShortestPath(this.start, this.end, this.lift) {
-    s = kGraphNodesMap[start];
-    d = kGraphNodesMap[end];
-    graphNodesMap_inv = inverse(kGraphNodesMap);
-    if (lift == true)
-      givePathByLift(s, d);
-    else
-      givePathByStairs(s, d);
+  ShortestPath() {
+    graphNodesMapInverse = inverse(kGraphNodesMap);
   }
 
-  void givePathByLift(int s, int d) {
+  List givePathByLift(String startPosition, String destinationPosition) {
+    generatePathByLift(
+        kGraphNodesMap[startPosition], kGraphNodesMap[destinationPosition]);
+    return listPath;
+  }
+
+  List givePathByStairs(String startPosition, String destinationPosition) {
+    generatePathByStairs(
+        kGraphNodesMap[startPosition], kGraphNodesMap[destinationPosition]);
+    return listPath;
+  }
+
+  void generatePathByLift(int s, int d) {
     if (s == d) {
-      list_path.add(s);
+      listPath.add(s);
       // print("${graphNodesMap_inv[s]}");
       return;
     } else {
-      givePathByLift(s, kLift_parent[s - 1][d - 1]);
-      list_path.add(d);
+      if (s != null && d != null) {
+        generatePathByLift(s, kLift_parent[s - 1][d - 1]);
+        listPath.add(d);
+      }
       // print(" ---> ${graphNodesMap_inv[d]}");
     }
   }
 
-  void givePathByStairs(int s, int d) {
+  void generatePathByStairs(int s, int d) {
     if (s == d) {
-      list_path.add(s);
+      listPath.add(s);
       // print("${graphNodesMap_inv[s]}");
       return;
     } else {
-      givePathByLift(s, kStair_parent[s - 1][d - 1]);
-      list_path.add(d);
+      generatePathByLift(s, kStair_parent[s - 1][d - 1]);
+      listPath.add(d);
       //print(" ---> ${graphNodesMap_inv[d]}");
     }
   }
