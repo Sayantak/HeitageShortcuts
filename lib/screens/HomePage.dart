@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:heritage_shortcuts/components/DropDownField.dart';
 import 'package:heritage_shortcuts/constants.dart';
+
+import 'results.dart';
+
 import 'package:heritage_shortcuts/components/InAppLogo.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,7 +15,7 @@ class _HomePageState extends State<HomePage> {
   String startPosition;
   String endPosition;
   TextEditingController controller = new TextEditingController();
-
+  String start, end;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
