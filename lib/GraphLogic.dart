@@ -4,22 +4,22 @@ class ShortestPath {
   String start, end;
   int s, d;
   bool lift;
-  Map kGraphNodesMap_inv;
+  Map graphNodesMap_inv;
 
   ShortestPath(this.start, this.end, this.lift) {
     s = kGraphNodesMap[start];
     d = kGraphNodesMap[end];
-    kGraphNodesMap_inv = inverse(kGraphNodesMap); //inverse the map
-    give_path_lift(s, d);
+    graphNodesMap_inv = inverse(kGraphNodesMap);
+    givePathByLift(s, d);
   }
 
-  void give_path_lift(int s, int d) {
+  void givePathByLift(int s, int d) {
     if (s == d) {
-      print("{$kGraphNodesMap_inv[s]}");
+      print("${graphNodesMap_inv[s]}");
       return;
     } else {
-      give_path_lift(s, kLift_parent[s - 1][d - 1]);
-      print(" ---> {$kGraphNodesMap_inv[s]}");
+      givePathByLift(s, kLift_parent[s - 1][d - 1]);
+      print(" ---> ${graphNodesMap_inv[d]}");
     }
   }
 
