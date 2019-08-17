@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:heritage_shortcuts/components/DropDownField.dart';
 import 'package:heritage_shortcuts/constants.dart';
+import 'package:heritage_shortcuts/components/InAppLogo.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -17,23 +18,24 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-              child: Text(
-                'Gonna attend the class? Really?',
-                style: TextStyle(
-                  fontSize: 20.0,
-                  color: Colors.blue[400],
-                  shadows: [
-                    Shadow(
-                      color: Colors.lightBlueAccent,
-                      blurRadius: 3.0,
-                    ),
-                  ],
-                ),
-              ),
-            ),
+//            Padding(
+//              padding:
+//                  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+//              child: Text(
+//                'Gonna attend the class? Really?',
+//                style: TextStyle(
+//                  fontSize: 20.0,
+//                  color: Colors.blue[400],
+//                  shadows: [
+//                    Shadow(
+//                      color: Colors.lightBlueAccent,
+//                      blurRadius: 3.0,
+//                    ),
+//                  ],
+//                ),
+//              ),
+//            ),
+            InAppLogo(),
             Flexible(
               child: Padding(
                 padding: const EdgeInsets.all(4.0),
