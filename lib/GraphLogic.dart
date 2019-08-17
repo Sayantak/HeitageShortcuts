@@ -10,7 +10,10 @@ class ShortestPath {
     s = kGraphNodesMap[start];
     d = kGraphNodesMap[end];
     graphNodesMap_inv = inverse(kGraphNodesMap);
-    givePathByLift(s, d);
+    if (lift == true)
+      givePathByLift(s, d);
+    else
+      givePathByStairs(s, d);
   }
 
   void givePathByLift(int s, int d) {
@@ -19,6 +22,16 @@ class ShortestPath {
       return;
     } else {
       givePathByLift(s, kLift_parent[s - 1][d - 1]);
+      print(" ---> ${graphNodesMap_inv[d]}");
+    }
+  }
+
+  void givePathByStairs(int s, int d) {
+    if (s == d) {
+      print("${graphNodesMap_inv[s]}");
+      return;
+    } else {
+      givePathByLift(s, kStair_parent[s - 1][d - 1]);
       print(" ---> ${graphNodesMap_inv[d]}");
     }
   }
