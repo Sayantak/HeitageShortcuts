@@ -79,7 +79,7 @@ const Map kGraphNodesMap = {
   'CB 1st Floor': 25,
   'ICT 1st Floor': 26,
 };
-// TODO#1: Add the four 2D Lists
+
 // TODO#2: Write backend path generating algorithm in a separate file in a .dart file in lib (outside any subfolder)
 
 const List<List<double>> kLift_distance = [

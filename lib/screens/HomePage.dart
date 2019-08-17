@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:heritage_shortcuts/components/DropDownField.dart';
 import 'package:heritage_shortcuts/constants.dart';
-
 import 'ResultScreen.dart';
-
 import 'package:heritage_shortcuts/components/InAppLogo.dart';
+import 'package:heritage_shortcuts/GraphLogic.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -88,13 +87,14 @@ class _HomePageState extends State<HomePage> {
       //TODO#4: Add RadioButtons for stair/lift selection (My job)
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          //TODO#3: Print generated shortest path by accessing nodes as shown
           if (kGraphNodesMap['$startPosition'] <= 26 &&
               kGraphNodesMap['$startPosition'] > 0)
             print(kGraphNodesMap['$startPosition']);
           if (kGraphNodesMap['$endPosition'] <= 26 &&
               kGraphNodesMap['$endPosition'] > 0)
             print(kGraphNodesMap['$endPosition']);
+
+          ShortestPath ob = ShortestPath(startPosition, endPosition, true);
         },
         backgroundColor: Colors.blue[400],
         child: Icon(
