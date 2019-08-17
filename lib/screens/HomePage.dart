@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:heritage_shortcuts/components/DropDownField.dart';
 import 'package:heritage_shortcuts/constants.dart';
 
-import 'results.dart';
+import 'ResultScreen.dart';
 
 import 'package:heritage_shortcuts/components/InAppLogo.dart';
 
