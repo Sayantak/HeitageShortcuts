@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:heritage_shortcuts/components/DropDownField.dart';
 import 'package:heritage_shortcuts/constants.dart';
+import 'results.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -9,7 +10,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   TextEditingController controller = new TextEditingController();
-
+  String start, end;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,6 +49,7 @@ class _HomePageState extends State<HomePage> {
                   items: kLocations,
                   strict: false,
                   onValueChanged: (value) {
+                    start = value;
                     print(value);
                   },
                 ),
@@ -69,6 +71,7 @@ class _HomePageState extends State<HomePage> {
                 items: kLocations,
                 strict: false,
                 onValueChanged: (value) {
+                  end = value;
                   print(value);
                 },
               ),
@@ -77,7 +80,12 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          print('$start to $end');
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return Results();
+          }));
+        },
         backgroundColor: Colors.blue[400],
         child: Icon(
           Icons.chevron_right,
