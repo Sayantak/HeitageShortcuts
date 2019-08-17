@@ -15,11 +15,11 @@ class ShortestPath {
 
   void give_path_lift(int s, int d) {
     if (s == d) {
-      print("{$kGraphNodesMap_inv[s]}");
+      print("${kGraphNodesMap_inv[s]}");
       return;
     } else {
       give_path_lift(s, kLift_parent[s - 1][d - 1]);
-      print(" ---> {$kGraphNodesMap_inv[s]}");
+      print(" ---> ${kGraphNodesMap_inv[d]}");
     }
   }
 
