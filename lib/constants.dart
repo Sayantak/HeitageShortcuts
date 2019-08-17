@@ -29,7 +29,7 @@ const List<String> kLocations = [
   'Gate 5'
 ];
 
-const List<Map> creditList = <Map>[
+const List<Map> kCreditList = <Map>[
   {
     "profilePic": AssetImage('images/IMG_20190625_175359-01C.jpeg'),
     "title": "Sayantak Karar",
@@ -51,31 +51,33 @@ const List<Map> creditList = <Map>[
   },
 ];
 
-const List<Map> graphNodesMap = <Map>[
-  {'CME 6th Floor': 1},
-  {'CME 5th Floor': 2},
-  {'CME 4th Floor': 3},
-  {'CME 3th Floor': 4},
-  {'CME 2th Floor': 5},
-  {'CME Ground Floor': 6},
-  {'CB 6th Floor': 7},
-  {'CB 5th Floor': 8},
-  {'CB 4th Floor': 9},
-  {'CB 3th Floor': 10},
-  {'CB 2th Floor': 11},
-  {'CB Ground Floor': 12},
-  {'ICT 6th Floor': 13},
-  {'ICT 5th Floor': 14},
-  {'ICT 4th Floor': 15},
-  {'ICT 3th Floor': 16},
-  {'ICT Ground Floor': 17},
-  {'ICT 2th Floor': 18},
-  {'CME Basement': 19},
-  {'Library': 20},
-  {'ICT Basement': 21},
-  {'Gate 5': 22},
-  {'Canteen': 23},
-  {'CME 1st Floor': 24},
-  {'CB 1st Floor': 25},
-  {'ICT 1st Floor': 26},
-];
+const Map kGraphNodesMap = {
+  'CME 6th Floor': 1,
+  'CME 5th Floor': 2,
+  'CME 4th Floor': 3,
+  'CME 3th Floor': 4,
+  'CME 2th Floor': 5,
+  'CME Ground Floor': 6,
+  'CB 6th Floor': 7,
+  'CB 5th Floor': 8,
+  'CB 4th Floor': 9,
+  'CB 3th Floor': 10,
+  'CB 2th Floor': 11,
+  'CB Ground Floor': 12,
+  'ICT 6th Floor': 13,
+  'ICT 5th Floor': 14,
+  'ICT 4th Floor': 15,
+  'ICT 3th Floor': 16,
+  'ICT Ground Floor': 17,
+  'ICT 2th Floor': 18,
+  'CME Basement': 19,
+  'Library': 20,
+  'ICT Basement': 21,
+  'Gate 5': 22,
+  'Canteen': 23,
+  'CME 1st Floor': 24,
+  'CB 1st Floor': 25,
+  'ICT 1st Floor': 26,
+};
+// TODO#1: Add the four 2D Lists
+// TODO#2: Write backend path generating algorithm in a separate file in a .dart file in lib (outside any subfolder)

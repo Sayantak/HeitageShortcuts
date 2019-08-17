@@ -175,11 +175,11 @@ class _GuillotineMenuState extends State<GuillotineMenu>
                   height: double.infinity,
                   child: new Column(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children: creditList.map((menuItem) {
+                    children: kCreditList.map((creditListItem) {
                       return new ListTile(
                         leading: CircleAvatar(
                           radius: 29.0,
-                          backgroundImage: menuItem['profilePic'],
+                          backgroundImage: creditListItem['profilePic'],
                         ),
                         title: Padding(
                           padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -201,7 +201,7 @@ class _GuillotineMenuState extends State<GuillotineMenu>
                                 child: Align(
                                   alignment: Alignment.centerLeft,
                                   child: Text(
-                                    menuItem["title"],
+                                    creditListItem["title"],
                                     style: TextStyle(
                                       fontSize: 20.0,
                                       color: Colors.white,
@@ -226,7 +226,8 @@ class _GuillotineMenuState extends State<GuillotineMenu>
                                           MaterialPageRoute(
                                             builder: (context) {
                                               return SocialAccountScreen(
-                                                url: menuItem['facebookURL'],
+                                                url: creditListItem[
+                                                    'facebookURL'],
                                               );
                                             },
                                           ),
@@ -249,7 +250,8 @@ class _GuillotineMenuState extends State<GuillotineMenu>
                                             MaterialPageRoute(
                                               builder: (context) {
                                                 return SocialAccountScreen(
-                                                  url: menuItem['linkedInURL'],
+                                                  url: creditListItem[
+                                                      'linkedInURL'],
                                                 );
                                               },
                                             ),
@@ -273,7 +275,8 @@ class _GuillotineMenuState extends State<GuillotineMenu>
                                             MaterialPageRoute(
                                               builder: (context) {
                                                 return SocialAccountScreen(
-                                                  url: menuItem['twitterURL'],
+                                                  url: creditListItem[
+                                                      'twitterURL'],
                                                 );
                                               },
                                             ),
@@ -294,7 +297,8 @@ class _GuillotineMenuState extends State<GuillotineMenu>
                                           MaterialPageRoute(
                                             builder: (context) {
                                               return SocialAccountScreen(
-                                                url: menuItem['instagramURL'],
+                                                url: creditListItem[
+                                                    'instagramURL'],
                                               );
                                             },
                                           ),

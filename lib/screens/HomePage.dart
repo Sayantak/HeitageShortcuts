@@ -9,6 +9,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  String startPosition;
+  String endPosition;
   TextEditingController controller = new TextEditingController();
 
   @override
@@ -50,6 +52,7 @@ class _HomePageState extends State<HomePage> {
                   items: kLocations,
                   strict: false,
                   onValueChanged: (value) {
+                    startPosition = value;
                     print(value);
                   },
                 ),
@@ -71,6 +74,7 @@ class _HomePageState extends State<HomePage> {
                 items: kLocations,
                 strict: false,
                 onValueChanged: (value) {
+                  endPosition = value;
                   print(value);
                 },
               ),
@@ -78,8 +82,17 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+      //TODO#4: Add RadioButtons for stair/lift selection (My job)
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          //TODO#3: Print generated shortest path by accessing nodes as shown
+          if (kGraphNodesMap['$startPosition'] <= 26 &&
+              kGraphNodesMap['$startPosition'] > 0)
+            print(kGraphNodesMap['$startPosition']);
+          if (kGraphNodesMap['$endPosition'] <= 26 &&
+              kGraphNodesMap['$endPosition'] > 0)
+            print(kGraphNodesMap['$endPosition']);
+        },
         backgroundColor: Colors.blue[400],
         child: Icon(
           Icons.chevron_right,
