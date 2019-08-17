@@ -55,6 +55,7 @@ class _HomePageState extends State<HomePage> {
                   strict: false,
                   onValueChanged: (value) {
                     startPosition = value;
+                    // TODO #Crossbutton, when it is pressed make startposition null
                     print(value);
                   },
                 ),
@@ -77,6 +78,7 @@ class _HomePageState extends State<HomePage> {
                 strict: false,
                 onValueChanged: (value) {
                   endPosition = value;
+                  // TODO #Crossbutton, when it is pressed make startposition null
                   print(value);
                 },
               ),
@@ -86,7 +88,7 @@ class _HomePageState extends State<HomePage> {
       ),
       //TODO#4: Add RadioButtons for stair/lift selection (My job)
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
+        onPressed: () async {
           if (kGraphNodesMap['$startPosition'] <= 26 &&
               kGraphNodesMap['$startPosition'] > 0)
             print(kGraphNodesMap['$startPosition']);
@@ -94,7 +96,9 @@ class _HomePageState extends State<HomePage> {
               kGraphNodesMap['$endPosition'] > 0)
             print(kGraphNodesMap['$endPosition']);
 
-          ShortestPath ob = ShortestPath(startPosition, endPosition, true);
+          ShortestPath ob =
+              await ShortestPath(startPosition, endPosition, true);
+          // print(ob.list_path);
         },
         backgroundColor: Colors.blue[400],
         child: Icon(

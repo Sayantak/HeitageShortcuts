@@ -5,6 +5,7 @@ class ShortestPath {
   int s, d;
   bool lift;
   Map graphNodesMap_inv;
+  var list_path = List(); //holds the path in terms of the keys of the map
 
   ShortestPath(this.start, this.end, this.lift) {
     s = kGraphNodesMap[start];
@@ -18,21 +19,25 @@ class ShortestPath {
 
   void givePathByLift(int s, int d) {
     if (s == d) {
-      print("${graphNodesMap_inv[s]}");
+      list_path.add(s);
+      // print("${graphNodesMap_inv[s]}");
       return;
     } else {
       givePathByLift(s, kLift_parent[s - 1][d - 1]);
-      print(" ---> ${graphNodesMap_inv[d]}");
+      list_path.add(d);
+      // print(" ---> ${graphNodesMap_inv[d]}");
     }
   }
 
   void givePathByStairs(int s, int d) {
     if (s == d) {
-      print("${graphNodesMap_inv[s]}");
+      list_path.add(s);
+      // print("${graphNodesMap_inv[s]}");
       return;
     } else {
       givePathByLift(s, kStair_parent[s - 1][d - 1]);
-      print(" ---> ${graphNodesMap_inv[d]}");
+      list_path.add(d);
+      //print(" ---> ${graphNodesMap_inv[d]}");
     }
   }
 
