@@ -170,6 +170,9 @@ class DropDownField extends FormField<String> {
                         onPressed: () {
                           if (!enabled) return;
                           state.clearValue();
+                          state.setState(() {
+                            state._showDropDown = false;
+                          });
                         },
                       )
                     ],
