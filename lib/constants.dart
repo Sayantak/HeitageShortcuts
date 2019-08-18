@@ -78,6 +78,10 @@ const Map kGraphNodesMap = {
   'CME 1st Floor': 24,
   'CB 1st Floor': 25,
   'ICT 1st Floor': 26,
+  'Stairs': 27,
+  'Lift': 28,
+  'Connectors': 29,
+  'Road': 30
 };
 
 const List<List<double>> kLift_distance = [

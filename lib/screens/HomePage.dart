@@ -3,6 +3,7 @@ import 'package:heritage_shortcuts/components/DropDownField.dart';
 import 'package:heritage_shortcuts/constants.dart';
 import 'package:heritage_shortcuts/components/InAppLogo.dart';
 import 'package:heritage_shortcuts/GraphLogic.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -138,19 +139,31 @@ class _HomePageState extends State<HomePage> {
           List path = List();
 
           if (_liftSelect != 0) {
-//            if (startPosition == 'ICT Basement' ||
-//                destinationPosition == 'ICT Basement' ||
-//                startPosition == 'ICT 6th Floor' ||
-//                destinationPosition == 'ICT 6th Floor')
-//              Fluttertoast.showToast(
-//                  msg: 'There\'s No Lift !', toastLength: Toast.LENGTH_SHORT);
+            setState(() {
+              if (startPosition == 'ICT Basement' ||
+                  destinationPosition == 'ICT Basement')
+                Fluttertoast.showToast(
+                    msg: 'There\'s no Lift to ICT Basement!',
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.BOTTOM,
+                    backgroundColor: Colors.blueGrey.withOpacity(0.5),
+                    textColor: Colors.blue[400]);
+              else if (startPosition == 'ICT 6th Floor' ||
+                  destinationPosition == 'ICT 6th Floor')
+                Fluttertoast.showToast(
+                    msg: 'There\'s no Lift to ICT 6th Floor!',
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.BOTTOM,
+                    backgroundColor: Colors.blueGrey.withOpacity(0.5),
+                    textColor: Colors.blue[400]);
+            });
             path = ShortestPath()
                 .givePathByLift(startPosition, destinationPosition);
           } else {
             path = ShortestPath()
                 .givePathByStairs(startPosition, destinationPosition);
-            print(path);
           }
+          print(path);
         },
         backgroundColor: Colors.blue[400],
         child: Icon(

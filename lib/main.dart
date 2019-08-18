@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:heritage_shortcuts/screens/HomePage.dart';
 import 'screens/GuillotineScreen.dart';
-import 'screens/SocialAccountScreen.dart';
 
 void main() => runApp(MyApp());
 
