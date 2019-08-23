@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart' as prefix0;
 import 'package:heritage_shortcuts/components/DropDownField.dart';
 import 'package:heritage_shortcuts/constants.dart';
 import 'package:heritage_shortcuts/components/InAppLogo.dart';
@@ -129,12 +128,8 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-      //TODO#4: Add RadioButtons for stair/lift selection (My job)
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-//          print('${textEditingControllerStart.text}!');
-//          print('${textEditingControllerDestination.text}!');
-
           String startPosition = textEditingControllerStart.text;
           String destinationPosition = textEditingControllerDestination.text;
 
@@ -189,21 +184,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-//            Padding(
-//              padding:
-//                  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-//              child: Text(
-//                'Gonna attend the class? Really?',
-//                style: TextStyle(
-//                  fontSize: 20.0,
-//                  color: Colors.blue[400],
-//                  shadows: [
-//                    Shadow(
-//                      color: Colors.lightBlueAccent,
-//                      blurRadius: 3.0,
-//                    ),
-//                  ],
-//                ),
-//              ),
-//            ),

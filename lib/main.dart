@@ -11,9 +11,10 @@ class MyApp extends StatelessWidget {
       title: 'HitNav',
       theme: ThemeData(
         brightness: Brightness.dark,
-        primaryColor: Colors.purple[300],
+        toggleableActiveColor: Colors.blue[400],
+        accentColor: Colors.blue[400],
         primarySwatch: Colors.blueGrey,
-        primaryColorDark: Colors.purple[300],
+        textSelectionHandleColor: Colors.blue[400],
       ),
       home: WelcomePage(),
       debugShowCheckedModeBanner: false,

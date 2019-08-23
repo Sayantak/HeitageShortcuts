@@ -108,7 +108,9 @@ class ShortestPath {
           (listPath[i] == 20 && listPath[i + 1] == 12) ||
           (listPath[i] == 17 &&
               listPath[i + 1] == 21) || //ICT Ground - ICT Basement
-          (listPath[i] == 21 && listPath[i + 1] == 17)) {
+          (listPath[i] == 21 && listPath[i + 1] == 17) ||
+          (listPath[i] == 22 && listPath[i + 1] == 6) || //CME Ground - Gate 5
+          (listPath[i] == 6 && listPath[i + 1] == 22)) {
         listPath.insert(i + 1, 30);
         i++;
       }

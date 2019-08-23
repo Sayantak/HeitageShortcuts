@@ -31,7 +31,7 @@ const List<String> kLocations = [
 
 const List<Map> kCreditList = <Map>[
   {
-    "profilePic": AssetImage('images/IMG_20190625_175359-01C.jpeg'),
+    "profilePic": AssetImage('images/IMG_20190420_085617-01C.jpeg'),
     "title": "Sayantak Karar",
     "color": Colors.white,
     "facebookURL": "https://www.facebook.com/sayantak.karar",

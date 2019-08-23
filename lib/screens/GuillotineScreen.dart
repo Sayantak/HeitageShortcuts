@@ -127,8 +127,6 @@ class _GuillotineMenuState extends State<GuillotineMenu>
                       child: new Container(
                         width: double.infinity,
                         height: double.infinity,
-//                        child: new Opacity(
-//                          opacity: animationTitleFadeInOut.value,
                         child: new Text(
                           animationTitleFadeInOut.value == 0.0
                               ? 'WALL OF CREDITS'
