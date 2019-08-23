@@ -51,6 +51,30 @@ const List<Map> kCreditList = <Map>[
   },
 ];
 
+const List<String> tips = [
+  'The Heritage Canteen is a good place to rest',
+  'In second and third years, mandatory attendance is 60%',
+  'The Library is centrally air-conditioned',
+  'The sooner you go to the canteen, the more options you get',
+  'Don\'t send spam emails',
+  'ICT 3rd floor has an air-conditioned tutorial room',
+  'CB Corridors are very cool',
+  'Take a break from classes. You deserve it.',
+  'Medical certificates are available in the Cheap Store for Rs. 3',
+  'Always inform teachers before \'mass absences\'',
+  'It\'s never a mass bunk. It\'s a mass absence.',
+  'If you\'re stuck in college after 5:30 PM, go to the canteen. You might get extra food.',
+  'Try leaving the college sooner to avoid wait time in the line for autos',
+  'You can\'t be late to classes if you don\'t come to college. Hackerman.',
+  'Study a lot. But only a week before the exams. That is, the semester exams.',
+  'Sleep is your birth right. You should have it.',
+  'Attend classes. Until you have the required attedance to sit for the exams.',
+  'Always be friends with the person who takes the class notes',
+  'Don\'t talk while the class is going on. Especially while the attendance is being taken.',
+  'Don\'t make the teacher feel that you\'re there for attendance. Regardless of it being true or false',
+  'It\'s for the best that your college life isn\'t directed by Karan Johar',
+];
+
 const Map kGraphNodesMap = {
   'CME 6th Floor': 1,
   'CME 5th Floor': 2,
@@ -83,6 +107,10 @@ const Map kGraphNodesMap = {
   'Connectors': 29,
   'Road': 30
 };
+
+Map inverse(Map f) {
+  return f.map((k, v) => MapEntry(v, k));
+}
 
 const List<List<double>> kLift_distance = [
   [

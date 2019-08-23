@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Heritage Shorts',
+      title: 'HitNav',
       theme: ThemeData(
         brightness: Brightness.dark,
         primaryColor: Colors.purple[300],

@@ -132,12 +132,14 @@ class _GuillotineMenuState extends State<GuillotineMenu>
                         child: new Text(
                           animationTitleFadeInOut.value == 0.0
                               ? 'WALL OF CREDITS'
-                              : 'HERITAGE SHORTCUTS',
+                              : 'HITNAV',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 20.0,
                             color: Colors.white,
-                            letterSpacing: 2.0,
+                            letterSpacing: animationTitleFadeInOut.value == 0.0
+                                ? 2.0
+                                : 4.0,
                             shadows: [
                               Shadow(
                                 color: Colors.lightBlueAccent,

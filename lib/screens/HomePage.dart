@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as prefix0;
 import 'package:heritage_shortcuts/components/DropDownField.dart';
 import 'package:heritage_shortcuts/constants.dart';
 import 'package:heritage_shortcuts/components/InAppLogo.dart';
 import 'package:heritage_shortcuts/GraphLogic.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:heritage_shortcuts/screens/ResultScreen.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -136,34 +138,46 @@ class _HomePageState extends State<HomePage> {
           String startPosition = textEditingControllerStart.text;
           String destinationPosition = textEditingControllerDestination.text;
 
-          List path = List();
-
-          if (_liftSelect != 0) {
-            setState(() {
-              if (startPosition == 'ICT Basement' ||
-                  destinationPosition == 'ICT Basement')
-                Fluttertoast.showToast(
-                    msg: 'There\'s no Lift to ICT Basement!',
-                    toastLength: Toast.LENGTH_SHORT,
-                    gravity: ToastGravity.BOTTOM,
-                    backgroundColor: Colors.blueGrey.withOpacity(0.5),
-                    textColor: Colors.blue[400]);
-              else if (startPosition == 'ICT 6th Floor' ||
-                  destinationPosition == 'ICT 6th Floor')
-                Fluttertoast.showToast(
-                    msg: 'There\'s no Lift to ICT 6th Floor!',
-                    toastLength: Toast.LENGTH_SHORT,
-                    gravity: ToastGravity.BOTTOM,
-                    backgroundColor: Colors.blueGrey.withOpacity(0.5),
-                    textColor: Colors.blue[400]);
-            });
-            path = ShortestPath()
-                .givePathByLift(startPosition, destinationPosition);
-          } else {
-            path = ShortestPath()
-                .givePathByStairs(startPosition, destinationPosition);
+          if (startPosition == '' || destinationPosition == '')
+            Fluttertoast.showToast(
+                msg: 'Fill both the boxes!',
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.BOTTOM,
+                backgroundColor: Colors.blueGrey.withOpacity(0.5),
+                textColor: Colors.blue[400]);
+          else {
+            List path = List();
+            if (_liftSelect != 0) {
+              setState(() {
+                if (startPosition == 'ICT Basement' ||
+                    destinationPosition == 'ICT Basement')
+                  Fluttertoast.showToast(
+                      msg: 'There\'s no Lift to ICT Basement!',
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.blueGrey.withOpacity(0.5),
+                      textColor: Colors.blue[400]);
+                else if (startPosition == 'ICT 6th Floor' ||
+                    destinationPosition == 'ICT 6th Floor')
+                  Fluttertoast.showToast(
+                      msg: 'There\'s no Lift to ICT 6th Floor!',
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.blueGrey.withOpacity(0.5),
+                      textColor: Colors.blue[400]);
+              });
+              path = ShortestPath()
+                  .givePathByLift(startPosition, destinationPosition);
+            } else {
+              path = ShortestPath()
+                  .givePathByStairs(startPosition, destinationPosition);
+            }
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return Results(
+                path: path,
+              );
+            }));
           }
-          print(path);
         },
         backgroundColor: Colors.blue[400],
         child: Icon(

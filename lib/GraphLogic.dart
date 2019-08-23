@@ -3,6 +3,7 @@ import 'constants.dart';
 class ShortestPath {
   Map graphNodesMapInverse;
   List<int> listPath = List(); //holds the path in terms of the keys of the map
+  List<int> condensedListPath = List();
 
   ShortestPath() {
     graphNodesMapInverse = inverse(kGraphNodesMap);
@@ -36,7 +37,8 @@ class ShortestPath {
       }
     }
     addConnectorsAndRoads();
-    return listPath;
+    condenseGeneratedPath();
+    return condensedListPath;
   }
 
   List givePathByStairs(String startPosition, String destinationPosition) {
@@ -62,7 +64,8 @@ class ShortestPath {
       }
     }
     addConnectorsAndRoads();
-    return listPath;
+    condenseGeneratedPath();
+    return condensedListPath;
   }
 
   void addConnectorsAndRoads() {
@@ -112,6 +115,35 @@ class ShortestPath {
     }
   }
 
+  void condenseGeneratedPath() {
+    for (int i = 0; i < listPath.length; i++) {
+      if (i == 0) {
+        condensedListPath.add(listPath[i]);
+      } else {
+        if (listPath[i] == 27) {
+          int j = i;
+          while (j < listPath.length - 2 && listPath[j + 2] == 27) {
+            if (j == i) condensedListPath.add(listPath[i]);
+            j += 2;
+            i = j + 1;
+          }
+          if (i < listPath.length) condensedListPath.add(listPath[i]);
+        } else if (listPath[i] == 28) {
+          int j = i;
+          while (j < listPath.length - 2 && listPath[j + 2] == 28) {
+            if (j == i) condensedListPath.add(listPath[i]);
+            j += 2;
+            i = j + 1;
+          }
+          if (i < listPath.length) condensedListPath.add(listPath[i]);
+        } else {
+          if (i < listPath.length) condensedListPath.add(listPath[i]);
+        }
+      }
+    }
+    print(condensedListPath);
+  }
+
   void generatePathByLift(int s, int d) {
     if (s == d) {
       listPath.add(s);
@@ -132,10 +164,5 @@ class ShortestPath {
       generatePathByLift(s, kStair_parent[s - 1][d - 1]);
       listPath.add(d);
     }
-  }
-
-  Map inverse(Map f) {
-    //code to inverse
-    return f.map((k, v) => MapEntry(v, k));
   }
 }
