@@ -83,17 +83,17 @@ class InAppLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 10.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: <Widget>[
-          LogoIconPart(
-            icon: Icons.location_on,
-            locationIconIndex: 0,
-          ),
-          Container(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: <Widget>[
+        LogoIconPart(
+          icon: Icons.location_on,
+          locationIconIndex: 0,
+        ),
+        Flexible(
+          child: Container(
+            height: 10.0,
             width: 80.0,
             child: CarouselSlider(
               height: 30.0,
@@ -113,12 +113,12 @@ class InAppLogo extends StatelessWidget {
               }).toList(),
             ),
           ),
-          LogoIconPart(
-            icon: Icons.location_on,
-            locationIconIndex: 1,
-          ),
-        ],
-      ),
+        ),
+        LogoIconPart(
+          icon: Icons.location_on,
+          locationIconIndex: 1,
+        ),
+      ],
     );
   }
 }

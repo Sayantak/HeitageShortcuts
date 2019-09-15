@@ -27,106 +27,113 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          InAppLogo(),
-          Padding(
-            padding: const EdgeInsets.all(4.0),
-            child: DropDownField(
-              icon: Icon(
-                Icons.location_on,
-                color: Colors.blue[400],
-              ),
-              required: false,
-              hintText: 'Choose a Location',
-              labelText: 'Start',
-              items: kLocations,
-              strict: false,
-              controller: textEditingControllerStart,
-              onValueChanged: (value) {
-                print(value);
-              },
-            ),
-          ),
-          SizedBox(
-            height: 20.0,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(4.0),
-            child: DropDownField(
-              icon: Icon(
-                Icons.location_on,
-                color: Colors.blue[400],
-              ),
-              required: false,
-              hintText: 'Choose a Location',
-              labelText: 'Destination',
-              items: kLocations,
-              strict: false,
-              controller: textEditingControllerDestination,
-              onValueChanged: (value) {
-                print(value);
-              },
-            ),
-          ),
-          Row(
-            children: <Widget>[
-              Radio(
-                  value: 1,
-                  activeColor: Colors.blue[400],
-                  groupValue: _liftSelect,
-                  onChanged: (int value) {
-                    setState(() {
-                      _liftSelect = value;
-                      _stairsSelect = 0;
-                    });
-                  }),
-              Text(
-                'Lift',
-                style: TextStyle(
-                  fontSize: 15.0,
-                  color: Colors.blue[400],
-                  shadows: [
-                    Shadow(
-                      color: Colors.lightBlueAccent,
-                      blurRadius: 3.0,
+      body: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: Container(
+          alignment: Alignment.center,
+          child: SingleChildScrollView(
+            reverse: true,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                InAppLogo(),
+                Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: DropDownField(
+                    icon: Icon(
+                      Icons.location_on,
+                      color: Colors.blue[400],
+                    ),
+                    required: false,
+                    hintText: 'Choose a Location',
+                    labelText: 'Start',
+                    items: kLocations,
+                    strict: false,
+                    controller: textEditingControllerStart,
+                    onValueChanged: (value) {
+                      print(value);
+                    },
+                  ),
+                ),
+                SizedBox(
+                  height: 20.0,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: DropDownField(
+                    icon: Icon(
+                      Icons.location_on,
+                      color: Colors.blue[400],
+                    ),
+                    required: false,
+                    hintText: 'Choose a Location',
+                    labelText: 'Destination',
+                    items: kLocations,
+                    strict: false,
+                    controller: textEditingControllerDestination,
+                    onValueChanged: (value) {
+                      print(value);
+                    },
+                  ),
+                ),
+                Row(
+                  children: <Widget>[
+                    Radio(
+                        value: 1,
+                        activeColor: Colors.blue[400],
+                        groupValue: _liftSelect,
+                        onChanged: (int value) {
+                          setState(() {
+                            _liftSelect = value;
+                            _stairsSelect = 0;
+                          });
+                        }),
+                    Text(
+                      'Lift',
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        color: Colors.blue[400],
+                        shadows: [
+                          Shadow(
+                            color: Colors.lightBlueAccent,
+                            blurRadius: 3.0,
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
-              ),
-            ],
-          ),
-          Flexible(
-            child: Row(
-              children: <Widget>[
-                Radio(
-                    value: 2,
-                    activeColor: Colors.blue[400],
-                    groupValue: _stairsSelect,
-                    onChanged: (int value) {
-                      setState(() {
-                        _stairsSelect = value;
-                        _liftSelect = 0;
-                      });
-                    }),
-                Text(
-                  'Stairs',
-                  style: TextStyle(
-                    fontSize: 15.0,
-                    color: Colors.blue[400],
-                    shadows: [
-                      Shadow(
-                        color: Colors.lightBlueAccent,
-                        blurRadius: 3.0,
+                Row(
+                  children: <Widget>[
+                    Radio(
+                        value: 2,
+                        activeColor: Colors.blue[400],
+                        groupValue: _stairsSelect,
+                        onChanged: (int value) {
+                          setState(() {
+                            _stairsSelect = value;
+                            _liftSelect = 0;
+                          });
+                        }),
+                    Text(
+                      'Stairs',
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        color: Colors.blue[400],
+                        shadows: [
+                          Shadow(
+                            color: Colors.lightBlueAccent,
+                            blurRadius: 3.0,
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ],
             ),
           ),
-        ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -136,6 +143,14 @@ class _HomePageState extends State<HomePage> {
           if (startPosition == '' || destinationPosition == '')
             Fluttertoast.showToast(
                 msg: 'Fill both the boxes!',
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.BOTTOM,
+                backgroundColor: Colors.blueGrey.withOpacity(0.5),
+                textColor: Colors.blue[400]);
+          else if (kGraphNodesMap[startPosition] == null ||
+              kGraphNodesMap[destinationPosition] == null)
+            Fluttertoast.showToast(
+                msg: 'Not a valid location!',
                 toastLength: Toast.LENGTH_SHORT,
                 gravity: ToastGravity.BOTTOM,
                 backgroundColor: Colors.blueGrey.withOpacity(0.5),
