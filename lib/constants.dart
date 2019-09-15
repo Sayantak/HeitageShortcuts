@@ -31,7 +31,8 @@ const List<String> kLocations = [
 
 const List<Map> kCreditList = <Map>[
   {
-    "profilePic": AssetImage('images/IMG_20190420_085617-01C.jpeg'),
+    "profilePic": NetworkImage(
+        'https://lh3.googleusercontent.com/WV_PrEuPdH9TId8holL7Xb0l-FaVCWkqlW4NRiRjQPqdoz_R7J8XsHUEytSrUZnaaw9kdhhmZa7MsnmxMhSLuU_xGGszB-w_bagkGCI6ZiKAUC7D6uf9gJlD5F9H0aLbUM2IhS9OSz3dipjODEVAQA7VIeBGMzW6'),
     "title": "Sayantak Karar",
     "color": Colors.white,
     "bio":
@@ -42,7 +43,8 @@ const List<Map> kCreditList = <Map>[
     "instagramURL": "https://www.instagram.com/sayantakkarar/",
   },
   {
-    "profilePic": AssetImage('images/SI_20190222_231242.jpeg'),
+    "profilePic": NetworkImage(
+        'https://lh3.googleusercontent.com/gLwIdKnvrBSkiXAKZ-qy6x_coORnbdT93xOhm5GQXOiis1JMSuKH4_Gz8t0Sb6rKxFXIskMiYrY3NEs94WXQ5W3uaLMv6ufkoktMOR8'),
     "title": "Saikat Kundu",
     "color": Colors.white,
     "bio": "Yet another geek who's obsessed with food, his camera and HIMYM ❤",

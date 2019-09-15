@@ -295,9 +295,8 @@ class _GuillotineMenuState extends State<GuillotineMenu>
                                           ),
                                         );
                                       },
-                                      logo: AssetImage(
-                                        "images/fblogoC.png",
-                                      ),
+                                      logo: NetworkImage(
+                                          'https://lh3.googleusercontent.com/BjV0jWL0fVrkJuhlg3BKJaOnvjC2833uTejtKDgPEBwk7bNhnrghIkjCNTgQyyC24ym6_9nViGtiRx7MHCqY3vMyMSPfrOayDICRy08'),
                                       color: Color(0xFF0071BC),
                                     ),
                                   ),
@@ -319,9 +318,8 @@ class _GuillotineMenuState extends State<GuillotineMenu>
                                             ),
                                           );
                                         },
-                                        logo: AssetImage(
-                                          "images/Linkedin-icon.png",
-                                        ),
+                                        logo: NetworkImage(
+                                            'https://lh3.googleusercontent.com/n9FxvbNAqJDGVZyu1dYY6PBEXlaJfN1G8ZRbnAc4WjV2tLffNUoEB18hEWbkHdaIrrYgM6h41RxpuSZxIzVj8cFq1AeGwu1TIu-HICI'),
                                         color: Color(0xFF457E9B),
                                       ),
                                     ),
@@ -344,9 +342,8 @@ class _GuillotineMenuState extends State<GuillotineMenu>
                                             ),
                                           );
                                         },
-                                        logo: AssetImage(
-                                          "images/tweetC.png",
-                                        ),
+                                        logo: NetworkImage(
+                                            'https://lh3.googleusercontent.com/R9A05ZYHlgvoa1HjRikGrk_VLp5SzrKNbMRmwdYuLOPJOPpmpUCkTn2swWZsx_b-34za8n6I_TDSUIsIT2ASKvg2gB1N3IAtmhHWn_s'),
                                         color: Color(0xFF627077),
                                       ),
                                     ),
@@ -366,7 +363,8 @@ class _GuillotineMenuState extends State<GuillotineMenu>
                                           ),
                                         );
                                       },
-                                      logo: AssetImage("images/instagram.png"),
+                                      logo: NetworkImage(
+                                          'https://lh3.googleusercontent.com/rpGjDJFiVC9mk2nvus90Yckiwmeuw1rfVwjxvQURLpWrMkb9JMlTl-iNZr31ksIXBua4SXxUZkJY7WdUtUDRV6HGoUeDpabnYmXD8sI'),
                                       color: Color(0xFF294861),
                                     ),
                                   ),
