@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:heritage_shortcuts/constants.dart';
 import 'dart:math';
@@ -187,7 +188,68 @@ class _GuillotineMenuState extends State<GuillotineMenu>
                             children: <Widget>[
                               MaterialButton(
                                 onPressed: () {
-                                  print('Button clicked');
+                                  showModalBottomSheet(
+                                    backgroundColor: Colors.transparent,
+                                    context: context,
+                                    builder: (context) => Stack(
+                                          children: <Widget>[
+                                            Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.end,
+                                              children: <Widget>[
+                                                Container(
+                                                  padding: EdgeInsets.all(20.0),
+                                                  alignment:
+                                                      Alignment.bottomCenter,
+                                                  decoration: BoxDecoration(
+                                                    color: Color(0xFF457E9B),
+                                                    borderRadius:
+                                                        BorderRadius.only(
+                                                      topLeft:
+                                                          Radius.circular(30.0),
+                                                      topRight:
+                                                          Radius.circular(30.0),
+                                                    ),
+                                                  ),
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            10.0),
+                                                    child: Center(
+                                                      child: Text(
+                                                        creditListItem["bio"],
+                                                        style: TextStyle(
+                                                          fontSize: 18.0,
+                                                          color: Colors.white,
+                                                          shadows: [
+                                                            Shadow(
+                                                              color: Colors
+                                                                  .white70,
+                                                              blurRadius: 4.0,
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                            Positioned(
+                                              bottom: creditListItem["title"] ==
+                                                      "Sayantak Karar"
+                                                  ? 135.0
+                                                  : 71.0,
+                                              left: screenWidth / 2 - 57.0,
+                                              child: CircleAvatar(
+                                                radius: 55.0,
+                                                backgroundImage: creditListItem[
+                                                    'profilePic'],
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                  );
                                 },
                                 height: 40.0,
                                 splashColor: Colors.lightBlueAccent,

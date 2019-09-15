@@ -30,16 +30,18 @@ class WelcomePage extends StatefulWidget {
 class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      top: false,
-      bottom: false,
-      child: Container(
-        child: Stack(
-          alignment: Alignment.topLeft,
-          children: <Widget>[
-            HomePage(),
-            GuillotineMenu(),
-          ],
+    return Scaffold(
+      body: SafeArea(
+        top: false,
+        bottom: false,
+        child: Container(
+          child: Stack(
+            alignment: Alignment.topLeft,
+            children: <Widget>[
+              HomePage(),
+              GuillotineMenu(),
+            ],
+          ),
         ),
       ),
     );

@@ -34,6 +34,8 @@ const List<Map> kCreditList = <Map>[
     "profilePic": AssetImage('images/IMG_20190420_085617-01C.jpeg'),
     "title": "Sayantak Karar",
     "color": Colors.white,
+    "bio":
+        "A happy geek who sings, writes poems, reads story books and clicks pictures 📷. Also loves food (mostly treats), F.R.I.E.N.D.S. and puppies (who doesn't?)",
     "facebookURL": "https://www.facebook.com/sayantak.karar",
     "linkedInURL": "https://www.linkedin.com/in/sayantak-karar-93870716b",
     "twitterURL": "https://twitter.com/SayantakKarar",
@@ -43,6 +45,7 @@ const List<Map> kCreditList = <Map>[
     "profilePic": AssetImage('images/SI_20190222_231242.jpeg'),
     "title": "Saikat Kundu",
     "color": Colors.white,
+    "bio": "Yet another geek who's obsessed with food, his camera and HIMYM ❤",
     "facebookURL": "https://www.facebook.com/saikat.kundu.16",
     "linkedInURL": "https://www.linkedin.com/in/saikat-kundu-63973014a/",
     "twitterURL": "https://twitter.com/",
