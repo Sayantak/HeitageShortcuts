@@ -32,7 +32,7 @@ const List<String> kLocations = [
 const List<Map> kCreditList = <Map>[
   {
     "profilePic": NetworkImage(
-        'https://lh3.googleusercontent.com/WV_PrEuPdH9TId8holL7Xb0l-FaVCWkqlW4NRiRjQPqdoz_R7J8XsHUEytSrUZnaaw9kdhhmZa7MsnmxMhSLuU_xGGszB-w_bagkGCI6ZiKAUC7D6uf9gJlD5F9H0aLbUM2IhS9OSz3dipjODEVAQA7VIeBGMzW6'),
+        'https://lh3.googleusercontent.com/VBFhWJnc8mIZjqSC-n57jFNlDNhMluIScgP2g7JpAHXVTQW3h2vFc-o3PZs_EMUI2knUd4Bd9s5j4Iwb8CT9p-juIN5ZZSCQQ0Wdoyx9OvirlRsT_COg8uXjwMiahpE9Esbav24YzwFfYeT2Vs26qb1_8xTTMR1Vs1PmgOLPZNeMPN3NqKAv2srAoyjIQaIFkiBx4Z5Vy9-Gd06scU8XoBviKF3hZBl_6Cgynbk5qtFPuAqTo0fUaybGXS3IkcNA7V1OFa3BLii5gJbmCK5p_VajZTfTvjHNLT2UxQbIzmKoS5mo90a-TrthlUDcrAANIz1Nc9LmnJKR6094UDcTg_gjbb9uax71icpCJIy-HqW47hxpS7766J82b2ryuj4_VHY65EZnAxxd9SJ4KKhTvNbD6A7GpOHYy9n0c1bjuhcLwSbirHJRvVu4CbU8EjCjCunrA9mpzKL6Tysi9GwYq9J_mtVKKt4hdRFJ1x-YD0bAYkncTr48HcyxO1uH6PabOiQnXS_c0w8Ot8_eI5WljCe0Dq5oVkwGdakLBFpgvtJPGEfFPQD0MlrqxC1e0AXexesgI9tVGq80H24_IDaYfDMBwNjgzUg6k-lxA9QAiR28EBV7_6ViM1SBmBb6jFn0dl_8BahyFVZM-o1L3JxQEz-uEazHlj5F0akfuNhYzqNdKN-DOuEPAp0c=s914-no'),
     "title": "Sayantak Karar",
     "color": Colors.white,
     "bio":
@@ -44,7 +44,7 @@ const List<Map> kCreditList = <Map>[
   },
   {
     "profilePic": NetworkImage(
-        'https://lh3.googleusercontent.com/gLwIdKnvrBSkiXAKZ-qy6x_coORnbdT93xOhm5GQXOiis1JMSuKH4_Gz8t0Sb6rKxFXIskMiYrY3NEs94WXQ5W3uaLMv6ufkoktMOR8'),
+        'https://lh3.googleusercontent.com/300H4sodu-4DrcVaJgvd6CjzZXINKoNbiQbwjFOo_ApFakNRArwkPD_XlEUqYlI7ijxdUnKvdI_SvKj1M-FUarhfrsqP4zA9IWYKZTbWOlDk2FGAmk3ZvNg4EjcMdYSBelDn5Vum2-Ujeikwjb80TNSEkgYELsZpdcXwLzwvFe5DsqTyD3Ci7zTSY9L6OJjTwOPw2k4lk2nARJtutQCuyqIJGmcIaOlxDxZH4IQxY75AT6crcWeYJtdfRS7UYKw3R4u_HOeJJ-JoaZ4iHM0uBdwpEEQErWw8OOp5PN2ZpsDsVQ5GZ0AdCLVuUOtBon6riftzc5KRO7sjzNpDOU_KeECV0Z9hHuqOpAo2-83_GvwQPp2zCSrb-V2zSECfvMMUjcx3OOZR00n7XdDIAyHjJqxbhytbEW9LAtYzr1g85CnYH7HZ3TMPhT42VuL04bqyC5UPgMXl9MYpqvRA6KAIjV0Zjy0SQYC5E-iykoq8Yi76El34-uiioFU07foSVETQr7ZMOujrTv1AJ4cAoyB3fvoCqOV8P_SuoaIrQtlzhauON78DTIyaITKAjTpiarIg8RtECe9QJgcNtNb1HOpASFwppAdZN6Y3nLae6KKhiemInUW6S-dX0OIMZm2sU9uiz0NVBPhIo6bXCLW5T4pRIYP9Z4SWxyRR9qWDvuBV8OWO5ibQWx7kvsZA=s914-no'),
     "title": "Saikat Kundu",
     "color": Colors.white,
     "bio": "Yet another geek who's obsessed with food, his camera and HIMYM ❤",
